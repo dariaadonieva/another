@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>portfolio Daria Adonieva</title>
+
+  <style>
+    /* box sizing */
+    *{
+      box-sizing: border-box;
+    }
+
+    :root {
+      overscroll-behavior: none;
+    }
+
+    *{
+      box-sizing: border-box;
+    }
+    
+    html{
+      scroll-behavior: smooth;
+    }
+
+
+    body{
+      margin: 0;
+      padding: 20px;
+      font-family: 'Amiamie Round', Courier, monospace;
+     color: #1b4b0b;
+     margin-top: 90px; /* Add padding to prevent content from overlapping the fixed header */
+    }
+    .projets{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 315px);
+      gap:30px;
+      justify-content: center;
+      justify-items: center;
+    }
+    img,video{
+      width: 100%;
+      height: auto;
+    }
+    .fixed{
+      position: fixed;
+    }
+    .projets.fixed{
+      top:100px;
+    }
+    .projets img {
+      transition: transform 0.3s ease; /* Smooth zoom effect */
+      object-fit: cover; /* Ensure the image stays within its frame */
+    }
+
+.header h1:hover, .header-nav a:hover, .contact a:hover {
+  color: #77da41; /* Change to your desired color */
+  transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+.projets div:hover h1, 
+  .projets div:hover p {
+    color: #77da41; /* Change to your desired hover color */
+    transition: color 0.3s ease; /* Smooth transition effect */
+  }
+
+    .projets div {
+      overflow: hidden; /* Prevent the image from exceeding its frame */
+      
+    }
+
+    .projets div:hover img {
+      transform: scale(1.1); /* Zoom in the image */
+    }
+
+    .overlay{
+      position: absolute;
+      width: 100vw;
+      min-height: 100vh;
+      z-index: 9999;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 48px;
+      top: 0;
+      left:0; 
+   
+    }
+    .close{
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      text-align: center;
+      line-height: 48px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 48px;
+      background: #000;
+      border-radius: 24px;
+    }
+
+    .wrap{
+      width:100%;
+    }
+
+    .fiche{
+      margin: 0px auto;
+      max-width: 640px;
+      background: #fff;
+      padding: 0 20px 20px;  
+    }
+
+/* Add margins to text inside .fiche */
+.fiche p, .fiche h1, .fiche div {
+    margin: 27px 0; /* Adjust the margin as needed */
+  }
+
+  .fiche div {
+    margin-bottom: 50px;
+  }
+
+    .fiche img{
+      margin:0 -20px 20px;
+      width: calc(100% + 40px);
+    }
+
+    .header h1{
+      margin-bottom: 25px;
+      margin-left: 30px;
+    }
+    .header {
+      position: fixed; /* Fix the header to the top of the page */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Make it span the full width of the page */
+    background-color: #ffffffab; /* Optional: Add a background color to make it stand out */
+    z-index: 1000; /* Ensure it appears above other elements */
+      }
+
+    .projets div p{
+      margin-left: 20px;
+      margin-bottom: 30px;
+      margin-top: 0px;
+    }
+
+.projets h1{
+  margin-left: 20px;
+}
+
+.contact {
+  margin-left: 30px;
+  margin-top: 55px;
+  margin-bottom: 30px;
+}
+
+.contact h2 {
+  margin-bottom: 20px;
+}
+
+a[href="https://www.instagram.com/convalia_?igsh=MTFneGF1MG5ycTdkaw=="],  a[href="a-propos.html"] {
+    color: inherit; /* Ensures the link inherits the color of surrounding text */
+    text-decoration: none; /* Removes underline if present */
+  }
+
+  .header-nav{
+  display: grid;
+  grid-template-columns: repeat(3, max-content); /* Change to 3 columns */
+  gap:0 24px ;
+}
+
+.header{
+  display: grid; /* pour pouvoir utiliser grid-template-columns */
+  grid-template-columns: max-content max-content; /* 2 colonnes de largeur minimale */
+  justify-content: space-between; /* pour espacer les éléments */
+  align-items: center; /* pour centrer verticalement */
+
+  padding:0 30px; 
+  backdrop-filter: blur(6px); /* pour flouter le background */
+}
+
+.projets img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  mix-blend-mode: screen; /* or multiply / overlay / lighten */
+  filter: blur(0px);
+}
+
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1><a href="index.html" style="text-decoration: none; color: inherit;">Daria Adonieva</a></h1>
+    <nav class="header-nav">
+      
+      
+      <a href="https://www.instagram.com/convalia_?igsh=MTFneGF1MG5ycTdkaw==">instagram</a>
+    </nav>
+  </header>
+  
+  <div class="projets"></div>
+
+<div class="contact"> 
+  <h2>Contact</h2>
+  <p>daria222tea@gmail.com</p>
+  <a href="https://www.instagram.com/convalia_?igsh=MTFneGF1MG5ycTdkaw==">convalia_</a>
+</div>
+
+  
+  <!-- gsap -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.7.0"></script>
+  <script type="module" src="main.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to('#projets',{
+        scrollTrigger:{
+            trigger:'#projets',
+            start:'top top',
+            end:'bottom center',
+            scrub:1,
+            pin:true,
+            //markers:true,
+        },
+        x:200,
+        stagger:0.5});
+
+        gsap.to('#svg2 rect',{
+        scrollTrigger:{
+            trigger:'#svg2',
+            start:'top top',
+            end:'bottom center',
+            scrub:1,
+            pin:true,
+            //markers:true,
+        },
+        x:200,
+        rotation:360,
+        stagger:0.5});
+
+
+</script>
+
+
+</body>
+</html>
